@@ -1,0 +1,67 @@
+public class Alunos {
+	private String[] aluno;
+    private String nome;
+    private int matricula;
+    private String curso;
+    
+    private int topo;
+    private int tam_max;
+    
+    public Alunos(int quantidade) {
+    	aluno = new String[quantidade];
+    	tam_max = quantidade;
+    	topo = 0;
+    }
+    
+    public void inserirAluno(String nome, int matricula, String curso) {
+    	aluno[topo] = nome + matricula + curso;
+    	System.out.println(aluno[topo]);
+    	topo++;
+    }
+    
+    public void RemoverAluno(int matricula) {
+        for (int i = 0; i < topo; i++) {
+            if (Aluno[i].matricula == matricula) {
+                Aluno[i] = Aluno[topo - 1];
+                Aluno[topo - 1] = null;
+                topo--;
+            }
+        }
+    }
+    
+    public void qtsPosVazia() {
+    	if ((tam_max - topo) == -1) {
+    		tam_max = 4;
+    		topo = 0;
+    	}
+    	System.out.println("A quantidade vazia é de: " + (tam_max - topo));
+    }
+    
+    public boolean estaCheio() {
+        return (topo == tam_max);
+    }
+   
+    
+    public void aumentarTamanho(int aumentarTamanho) {
+    	String aluno2[] = new String[aluno.length * aumentarTamanho];
+    	for (int i = 0; i < aluno.length; i++) {
+    		aluno2[i] = aluno[i];
+		}
+    	aluno = aluno2;
+    }
+
+    public void InserirAlunoUltimaPosicao(Aluno aluno) {
+        AumentarTamanhoVetorSeCheia();
+        Aluno[topo] = aluno;
+        topo++;
+    }
+    
+    public void InserirUmAlunoNaPrimeiraPosicao(Aluno aluno) {
+        AumentarTamanhoVetorSeCheia();
+        for (int i = topo; i > 0; i--) {
+            Aluno[i] = Aluno[i - 1];
+        }
+        Aluno[0] = aluno;
+        topo++;
+    }
+}
