@@ -1,0 +1,32 @@
+public class ItemPedido {
+    public int valor;
+    public int quantidade;
+    public Produtos[] produto;
+    
+    // A
+    public int primeiroNo;
+
+    public ItemPedidoA(int quantidade) {
+    	produto = new Produtos[quantidade];
+	}
+    
+    // B
+    ItemPedido proximo;
+    ItemPedido anterior;
+    int quantidadeNos;
+
+    public void ItemPedidoB() {
+    	proximo = anterior = null;
+        quantidadeNos = 0;
+    }
+
+    // C
+    public int topo;
+    public int tam_max;
+    
+    public void ItemPedidoC(int quantidade) {
+    	int[] Produto = new int[quantidade];
+    	tam_max = quantidade;
+    	topo = 0;
+    }
+}
